@@ -10,12 +10,12 @@ class _FormState extends State<Form> {
   bool _showPassword = false;
   bool isVisible = true;
 
-  String _name;
-  String _phoneNumber;
-  String _email;
-  String _password;
+  String? _name;
+  String? _phoneNumber;
+  String? _email;
+  String? _password;
 
-  String _validateName(String value) {
+  String _validateName(String? value) {
     if (value != null) {
       if (value.isEmpty) return 'Name is required.';
     }
@@ -25,7 +25,7 @@ class _FormState extends State<Form> {
         return 'Please enter only alphabetical characters.';
       }
     }
-    return null;
+    return "ok";
   }
 
   @override
@@ -43,7 +43,7 @@ class _FormState extends State<Form> {
               hintText: "Username",
               labelText: "Name",
             ),
-            onSaved: (String value) {
+            onSaved: (String? value) {
               this._name = value;
               print('name=$_name');
             },
@@ -103,7 +103,7 @@ class _FormState extends State<Form> {
               labelText: "Mobile No",
             ),
             keyboardType: TextInputType.phone,
-            onSaved: (String value) {
+            onSaved: (String? value) {
               this._phoneNumber = value;
               print('phoneNumber=$_phoneNumber');
             },
@@ -125,7 +125,7 @@ class _FormState extends State<Form> {
               labelText: "Email Address",
             ),
             keyboardType: TextInputType.emailAddress,
-            onSaved: (String value) {
+            onSaved: (String? value) {
               this._email = value;
               print('email=$_email');
             },

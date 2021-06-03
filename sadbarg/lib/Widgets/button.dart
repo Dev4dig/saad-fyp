@@ -1,26 +1,21 @@
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
-class Button extends StatefulWidget {
-  int btnWidth = 120;
-  int btnHeight = 30;
-  Function onclick;
+class Button extends StatelessWidget {
+  int? btnWidth = 120;
+  int? btnHeight = 30;
+  final VoidCallback onclick;
   String text;
 
-  Button({this.onclick, this.text});
-  Button.customDim({this.onclick, this.text, this.btnHeight, this.btnWidth});
+  Button({required this.onclick, required this.text});
+  Button.customDim({required this.onclick, required this.text, this.btnHeight, this.btnWidth});
 
-  @override
-  _ButtonState createState() => _ButtonState();
-}
-
-class _ButtonState extends State<Button> {
-  @override
+   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: widget.onclick,
-      child: Text(
-        widget.text,
+      onPressed: onclick,
+      child: Text(text
+        ,
         style: TextStyle(
           color: Colors.black,
           fontSize: 25,
@@ -30,5 +25,7 @@ class _ButtonState extends State<Button> {
         foregroundColor: MaterialStateProperty.all<Color>(Colors.blue),
       ),
     );
+   
   }
 }
+

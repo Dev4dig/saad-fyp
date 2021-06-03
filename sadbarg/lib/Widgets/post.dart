@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:sadbarg/Widgets/button.dart';
 
 // ignore: must_be_immutable
-class Post extends StatefulWidget {
-  String name;
-  String department;
-  int rating;
-  String content;
-
+class Post extends StatelessWidget {
+  String? name;
+  String? department;
+  int? rating;
+  String? content;
+   final VoidCallback onClick;
   Post({
+    required this.onClick,
     this.name,
     this.department,
     this.content,
@@ -16,12 +17,9 @@ class Post extends StatefulWidget {
   });
 
   @override
-  _PostState createState() => _PostState();
-}
-
-class _PostState extends State<Post> {
-  Widget _posts(int index) {
-    return Container(
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
       height: 220,
       width: 400,
       decoration: BoxDecoration(
@@ -70,7 +68,7 @@ class _PostState extends State<Post> {
               child: Button.customDim(
                   btnWidth: 30,
                   btnHeight: 20,
-                  onclick: null,
+                  onclick: onClick,
                   text: "View Full Article"),
             )
           ],
@@ -101,18 +99,11 @@ class _PostState extends State<Post> {
           ),
         ])
       ]),
+    ),
     );
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: Colors.grey.shade100,
-        body: ListView.builder(itemBuilder: (BuildContext context, int i) {
-          if (i.isOdd) {}
 
-          final index = i ~/ 2 + 1;
-          return _posts(index);
-        }));
-  }
 }
+
+ 

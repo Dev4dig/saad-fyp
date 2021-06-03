@@ -10,8 +10,8 @@ class _LoginState extends State<Login> {
   final GlobalKey<FormFieldState<String>> _passwordFieldKey =
       GlobalKey<FormFieldState<String>>();
 
-  String _email;
-  String _password;
+  String? _email;
+  String? _password;
 
   @override
   Widget build(BuildContext context) {
@@ -111,13 +111,13 @@ class _LoginState extends State<Login> {
 
 class PasswordField extends StatefulWidget {
   const PasswordField({
-    this.fieldKey,
-    this.hintText,
-    this.labelText,
-    this.helperText,
-    this.onSaved,
+    required this.fieldKey,
+    required this.hintText,
+    required this.labelText,
+    required this.helperText,
+    required this.onSaved,
     this.validator,
-    this.onFieldSubmitted,
+    required this.onFieldSubmitted,
   });
 
   final Key fieldKey;
