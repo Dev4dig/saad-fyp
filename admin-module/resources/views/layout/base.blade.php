@@ -12,7 +12,7 @@
             <meta name="description" content="">
             <meta name="author" content="">
             <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('template-resources/plugins/images/favicon.png') }}">
-            <title>Sadbarg-Admin</title>
+            <title>@yield('title')</title>
             <!-- Bootstrap Core CSS -->
             <link href="{{ asset('template-resources/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
             <!-- Menu CSS -->
@@ -57,8 +57,8 @@
                 <!-- Topbar header - style you can find in pages.scss -->
                 <!-- ============================================================== -->
                 <nav class="navbar navbar-default navbar-static-top m-b-0">
-                    <div class="navbar-header" style="background-color: black;">
-                        <div class="top-left-part" style="background-color:black;"
+                    <div class="navbar-header" >
+                        <div class="top-left-part" >
                             <!-- Logo -->
                             <a class="logo" href="index.html">
                                 <!-- Logo icon image, you can use font-icon also --><b>
@@ -74,7 +74,7 @@
                                 
                             </li>
                             <li>
-                                <a class="profile-pic" href="profile.html"> <b class="hidden-xs">Steave</b><img src="{{ asset('template-resources/plugins/images/users/varun.jpg') }}" alt="user-img" width="36" class="img-circle"></a>
+                                <a class="profile-pic" href="{{route('profile')}}"> <b class="hidden-xs">Steave &nbsp;&nbsp;</b><img src="{{ asset('template-resources/plugins/images/users/varun.jpg') }}" alt="user-img" width="36" class="img-circle"></a>
                             </li>
                         </ul>
                     </div>
@@ -93,22 +93,22 @@
                         </div>
                         <ul class="nav" id="side-menu">
                             <li style="padding: 100px 0 0;">
-                                <a href="index.html" class="waves-effect"><i class="fa fa-fw" aria-hidden="true"></i>Submitted</a>
+                                <a href="{{route('submitted')}}" class="waves-effect"><i class="fa fa-fw" aria-hidden="true"></i>Submitted</a>
                             </li>
                             <li>
-                                <a href="profile.html" class="waves-effect"><i class="fa fa-fw" aria-hidden="true"></i>Rejected</a>
+                                <a href="{{route('rejected')}}" class="waves-effect"><i class="fa fa-fw" aria-hidden="true"></i>Rejected</a>
                             </li>
                             <li>
-                                <a href="basic-table.html" class="waves-effect"><i class="fa  fa-fw" aria-hidden="true"></i>For Editing</a>
+                                <a href="{{route('pending_edit')}}" class="waves-effect"><i class="fa  fa-fw" aria-hidden="true"></i>For Editing</a>
                             </li>
                              <li>
-                                <a href="basic-table.html" class="waves-effect"><i class="fa  fa-fw" aria-hidden="true"></i>Edited</a>
+                                <a href="{{route('edited')}}" class="waves-effect"><i class="fa  fa-fw" aria-hidden="true"></i>Edited</a>
                             </li>
                             <li>
-                                    <a href="basic-table.html" class="waves-effect"><i class="fa  fa-fw" aria-hidden="true"></i>Approved</a>
+                                    <a href="{{route('approved')}}" class="waves-effect"><i class="fa  fa-fw" aria-hidden="true"></i>Approved</a>
                             </li>
                             <li>
-                                    <a href="basic-table.html" class="waves-effect"><i class="fa  fa-fw" aria-hidden="true"></i>Finalized</a>
+                                    <a href="{{route('finalized')}}" class="waves-effect"><i class="fa  fa-fw" aria-hidden="true"></i>Finalized</a>
                             </li>
                             
                             

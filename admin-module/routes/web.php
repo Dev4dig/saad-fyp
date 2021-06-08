@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PostsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,31 +14,23 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('submitted');
 });
 
 
 
 Route::get('/profile', function () {
-    return view('profile');
-});
+    return view('user.profile');
+})->name('profile');
 
-Route::get('/approved', function () {
-    return view('approved');
-});
+Route::get('/approved', [PostsController::class,'approved'])->name('approved');
 
-Route::get('/rejected', function () {
-    return view('rejected');
-});
+Route::get('/rejected', [PostsController::class,'rejected'])->name('rejected');
 
-Route::get('/finalized', function () {
-    return view('finalized');
-});
+Route::get('/finalized', [PostsController::class,'finalized'])->name('finalized');
 
-Route::get('/submitted', function () {
-    return view('submitted');
-});
+Route::get('/submitted', [PostsController::class,'submitted'])->name('submitted');
 
-Route::get('/pendig-edit', function () {
-    return view('pendig-edit');
-});
+Route::get('/edited', [PostsController::class,'edited'])->name('edited');
+
+Route::get('/pending-edit',[PostsController::class,'pending_edit'])->name('pending_edit');
