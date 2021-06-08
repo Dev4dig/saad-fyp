@@ -138,7 +138,8 @@ class _FormState extends State<Form> {
         Padding(
           padding: const EdgeInsets.only(left: 30, right: 30),
           child: PasswordField(
-            //helperText: 'No more than 8 characters.',
+            helperText: 'No more than 8 characters.',
+            
             labelText: 'Password',
             onFieldSubmitted: (String value) {
               setState(() {

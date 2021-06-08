@@ -16,3 +16,29 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+
+Route::get('/profile', function () {
+    return view('profile');
+});
+
+Route::get('/approved', function () {
+    return view('approved');
+});
+
+Route::get('/rejected', function () {
+    return view('rejected');
+});
+
+Route::get('/finalized', function () {
+    return view('finalized');
+});
+
+Route::get('/submitted', function () {
+    return view('submitted');
+});
+
+Route::get('/pendig-edit', function () {
+    return view('pendig-edit');
+});
