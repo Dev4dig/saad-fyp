@@ -77,6 +77,9 @@ class _LoginState extends State<Login> {
               padding: const EdgeInsets.only(top: 5, left: 30, right: 30),
               child: Container(
                 child: PasswordField(
+                  helperText: "password",
+                 onSaved: (String? a){},
+                  hintText: "Password",
                   fieldKey: _passwordFieldKey,
                   //helperText: 'No more than 8 characters.',
                   labelText: 'Password',
@@ -124,7 +127,7 @@ class PasswordField extends StatefulWidget {
   final String labelText;
   final String helperText;
   final FormFieldSetter<String> onSaved;
-  final FormFieldValidator<String> validator;
+  final FormFieldValidator<String>? validator;
   final ValueChanged<String> onFieldSubmitted;
 
   @override

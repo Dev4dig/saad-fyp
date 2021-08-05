@@ -1,6 +1,6 @@
 <!-- ============================================================================= -->
         <!-- media post by user -->
-        <div class="hidden-xs hidden-sm mpu-single-post media-post-user col-md-8 col-sm-8 col-xs-8" style="margin-top: 20px;">
+        <div id="mpu-{{$i}}" class="hidden-xs hidden-sm mpu-single-post media-post-user col-md-8 col-sm-8 col-xs-8" style="margin-top: 20px;">
             <div class=" row mpu-header">
                 <div class=" col-md-8 post-heading ">
                     <b>Ali Yashaar</b> 
@@ -19,9 +19,14 @@
                 <div class="mpu-images-area ">
                 
                         
-                       @for ($i = 0; $i <=3; $i++)
-                            
-                <x-test data={{$i}}/>
+                       @for ($v = 0; $v <=2; $v++)
+                            <div onclick="showImg({{$i}}, {{$v}})" class="single-img-wrapper">
+                                <a href="#">
+                                    <div class="img-body">
+                                    <img id="img-{{$i}}-{{$v}}" style="width: 100%; height: 100%;" src="{{ asset('') }}{{$imgs[$v]}}" alt="">
+                                    </div>          
+                                </a>       
+                            </div>
                         @endfor
                   
                 </div>  

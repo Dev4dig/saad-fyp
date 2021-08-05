@@ -15,12 +15,7 @@
             <div class=" row mpu-body">
                 <div class="mpu-images-area ">
                 
-                        <x-small_img_card/>
-                        <x-small_img_card/>
-                       
-
-                        
-
+                        <x-test data="0"/>
                 
                 </div>                        
             </div>

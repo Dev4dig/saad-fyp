@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-          <x-test/>
+          
                 <div class="container-fluid">
                     <div class="row bg-title" style="height: 0%">
                         

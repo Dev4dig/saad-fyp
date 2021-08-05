@@ -3,10 +3,10 @@ import 'package:sadbarg/Pages/login.dart';
 
 class Cardd extends StatefulWidget {
   @override
-  _FormState createState() => _FormState();
+  _CarddState createState() => _CarddState();
 }
 
-class _FormState extends State<Form> {
+class _CarddState extends State<Cardd> {
   bool _showPassword = false;
   bool isVisible = true;
 
@@ -14,7 +14,7 @@ class _FormState extends State<Form> {
   String? _phoneNumber;
   String? _email;
   String? _password;
-
+final GlobalKey<FormFieldState<String>> _passwordFieldKey = GlobalKey<FormFieldState<String>>();
   String _validateName(String? value) {
     if (value != null) {
       if (value.isEmpty) return 'Name is required.';
@@ -139,8 +139,10 @@ class _FormState extends State<Form> {
           padding: const EdgeInsets.only(left: 30, right: 30),
           child: PasswordField(
             helperText: 'No more than 8 characters.',
-            
+            hintText: "",
+            fieldKey: _passwordFieldKey,
             labelText: 'Password',
+            onSaved: (String? a){},
             onFieldSubmitted: (String value) {
               setState(() {
                 this._showPassword = !this._showPassword;

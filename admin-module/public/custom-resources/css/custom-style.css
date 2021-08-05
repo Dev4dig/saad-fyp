@@ -2,6 +2,9 @@
     background-color: #303A5B;
     width: 100%;
     height: 40px;
+    position: -webkit-sticky; /* Safari & IE */
+position: sticky;
+top: 0;
 }
 .tabbar-tabs{
   
@@ -25,7 +28,7 @@
     height: 300px;
     border-radius: 10px;
     background-color: white;
-    
+    margin-top: 15px;
     box-shadow: 2px 2px 7px 1px #cccccc;
    
 }
@@ -126,20 +129,24 @@
   }
 
   .single-img-wrapper{
-    height: 105px; border: 1px solid red; width: 95px; display: inline-block;
-    margin: 4px;
+    height: 90px; border: 1px solid red; width: 95px; display: inline-block;
+    margin: 2px;
     background: white;
     border: 1px solid #eeeeee;
     box-shadow: 2px 2px 7px 1px #bbbbbb;
-    border-radius: 5px;
+    border-radius: 2px;
   }
 
-  .img-header{
-    width: 100%;height: 15%; border:1p solid yellow;
-  }
+
 
   .img-body{
-    width: 100%; border: 1px solid green; height: 85%;
+    width: 100%;   height: 100%;
+    border-radius: 2px;
+  }
+
+  .img-body img{
+    border-radius: 3px;
+    
   }
 
   .img-opt-btn{
@@ -153,22 +160,50 @@
   .img-opt-menu{
     z-index: 8;
     position: absolute;
-    width: 80px;
+    width: 110px;
     height: auto;
     background: white;
-    margin-top: -90px;
+    margin-top: -20px;
     float: right;
-    margin-left: 10px;
+    margin-left: 92%;
     border-radius: 5px;
     box-shadow: 2px 2px 7px 1px #aaaaaa;
     border: 1px solid #dddddd;
     visibility: hidden;
+    
   }
 
+.user-opt-menu
+{
+  z-index: 8;
+  position: absolute;
+  width: 110px;
+  height: auto;
+  background: white;
+  margin-top: -20px;
+  float: right;
+  margin-left: 75%;
+  border-radius: 5px;
+  box-shadow: 2px 2px 7px 1px #aaaaaa;
+  border: 1px solid #dddddd;
+  visibility: hidden;
+  
+}
+
+
+.user-opt-menu ul li{
+  text-decoration: none;
+  font-size: 11pt;
+  list-style: none;
+  margin-left: -30px;
+  margin-top: 5px;
+ }
+
   .hr-divider{
-    width: 150%;
+    width: 120%;
     margin-left: -30px;
     border-top: 1px solid #dddddd;
+    margin-top: 3px;
   }
 
   .img-opt-menu ul li{
@@ -176,13 +211,188 @@
    font-size: 11pt;
    list-style: none;
    margin-left: -30px;
-   margin-top: 3px;
+   margin-top: 5px;
   }
 
   .img-opt-menu ul{
     margin-left: 0px;
   }
 
+
+  .article-opt-menu-btn{
+   height: 20px;
+   margin-top: 10px;
+   background: transparent;
+   border-radius: 3px;
+   float: right;
+
+  }
+
+
+.user-card-wrapper{
+  height: 100px;
+ 
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 7px 1px #cccccc;
+  background: white;
+  
+}
+
+.user-card-profile-pic-wrapper{
+  /* border: 1px solid red; */
+  height: 100%;
+}
+
+.user-card-profile-details-wrapper{
+  /* border: 1px solid green; */
+  height: 100%;
+  padding: 5px;
+
+}
+
+.profile-pic-div{
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  border: 3px solid grey;
+  margin: auto;
+  margin-top: 5px;
+  padding-top: 1px;
+}
+
+.prfile-pic{
+  width: 96%;
+  height: 96%;
+  margin: 2%;
+  border-radius: 50%;
+}
+
+.profile-name {
+  font-family: 'Germalt Bold';
+  font-size: large;
+  display: inline;
+  /* border: 1px solid red; */
+}
+
+.profile-details{
+  /* margin-top: -10px; */
+  /* border: 1px solid green; */
+  font-size: 14px;
+}
+
+.profile-card-left-wrapper{
+  height: 100%;
+  /* border: 1px solid red; */
+}
+
+
+
+
+
+
+  .glyphicon-star {
+    font-size: 15px;
+    /* color: green; */
+    &.half {
+      position: relative;
+      &:before {
+        position: relative;
+        z-index: 9;
+        width: 47%;
+        display: block;
+        overflow: hidden;
+      }
+      &:after {
+        content: '\e006';
+        position: absolute;
+        z-index: 8;
+        color: #bdc3c7;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+
+
+
+
+   /* modal css */
+
+.body-wrapper{
+    filter: blur(1px);
+  -webkit-filter: blur(1px); 
+  }
+  
+.modal-wrapper{
+  width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); z-index: 10;  position: fixed; margin-left: 0%; top: 0%; 
+  visibility: hidden;
+}
+
+.modale-left{
+  height: 85%;
+}
+
+.modal-middle{
+  top: 8%; border-radius: 10px; height: 85%;  position: relative;
+}
+
+.modal-img{
+  height: 100%; width: 100%; border: 3px solid white; border-radius: 10px;
+}
+
+.modal-cross-btn{
+  background:rgba(0, 0, 0, 0.5); z-index: 11; align-self: center; position: absolute; height: 50px; width: 50px; border-radius: 50%; top: 1%; right: 2%;
+}
+
+.modal-cross-btn p{
+  color: white; font-size: 40px; margin-top: -10px; margin-left: 13px;
+}
+
+
+.modal-caption-bar{
+  background:rgba(0, 0, 0, 0.5); z-index: 11; align-self: center; position: absolute; height: 6%; border-radius: 5px; width: 80%; bottom: 0%; left: 10%; 
+}
+
+.modal-caption-bar p{
+  color: white; margin: 4px;
+}
+
+.modal-caption-bar div{
+  float: right; margin-top: 4px; margin-right: 5px;
+}
+
+.modal-right{
+  top: 8%; height: 85%; 
+}
+  .prev_btn{
+    background: rgba(0, 0, 0, 0.6);
+    margin-top: 130%;
+    margin-left: 50%;
+    height: 100px;
+    width: 100px;
+    border: none;
+    border-radius: 50%;
+    color: white;
+   
+  }
+
+  .next_btn{
+    background: rgba(0, 0, 0, 0.6);
+    margin-top: 100%;
+    margin-right: 50%;
+    height: 100px;
+    width: 100px;
+    border: none;
+    border-radius: 50%;
+    color: white;
+  }
+
+
+  .glyphicon-chevron-left{
+    scale: inherit;
+    size: 100px;
+  }
   /* ===========Tabs css========================= */
 
 

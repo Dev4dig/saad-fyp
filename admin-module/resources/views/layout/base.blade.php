@@ -14,9 +14,11 @@
             <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('template-resources/plugins/images/favicon.png') }}">
             <title>@yield('title')</title>
             <!-- Bootstrap Core CSS -->
-
+           
             <script src="{{ asset('template-resources/plugins/bower_components/jquery/dist/jquery.min.js') }}"></script>
+            
             <link href="{{ asset('template-resources/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+          
             <!-- Menu CSS -->
             <link href="{{ asset('template-resources/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css') }}" rel="stylesheet">
             <!-- toast CSS -->
@@ -42,6 +44,8 @@
         </head>
         
         <body class="fix-header">
+<!-- background div -->
+<div id="body-wrapper">
             
             <!-- ============================================================== -->
             <!-- Preloader -->
@@ -62,21 +66,22 @@
                     <div class="navbar-header" style="background: black" >
                         <div class="top-left-part" style="background: black" >
                             <!-- Logo -->
-                            <a class="logo" href="index.html">
+                            {{-- <a class="logo" href="index.html">
                                 <!-- Logo icon image, you can use font-icon also --><b>
                                 <!--This is dark logo icon--><img src="{{ asset('template-resources/plugins/images/admin-logo.png') }}" alt="home" class="dark-logo" /><!--This is light logo icon--><img src="{{asset('template-resources/plugins/images/admin-logo-dark.png')}}" alt="home" class="light-logo" />
                              </b>
                                 <!-- Logo text image you can use text also --><span class="hidden-xs">
                                 <!--This is dark logo text--><img src="{{ asset('template-resources/plugins/images/admin-text.png')}}" alt="home" class="dark-logo" /><!--This is light logo text--><img src="{{asset('template-resources/plugins/images/admin-text-dark.png')}}" alt="home" class="light-logo" />
-                             </span> </a>
+                             </span> </a> --}}
+                             <h3 style="color:white; margin-left:20px; ">Sadbarg</h3>
                         </div>
                         <!-- /Logo -->
                         <ul class="nav navbar-top-links navbar-right pull-right" style="background: black">
                             <li>
-                                
+                                <a href="{{route('manage-admin')}}">Management Panel</a>
                             </li>
                             <li>
-                                <a class="profile-pic" href="{{route('profile')}}"> <b class="hidden-xs">Steave &nbsp;&nbsp;</b><img src="{{ asset('template-resources/plugins/images/users/varun.jpg') }}" alt="user-img" width="36" class="img-circle"></a>
+                            <a class="profile-pic" href="{{route('profile')}}"> <b class="hidden-xs">Steave &nbsp;&nbsp;</b><img src="{{ asset('template-resources/plugins/images/users/varun.jpg') }}" alt="user-img" width="36" class="img-circle"></a>
                             </li>
                         </ul>
                     </div>
@@ -157,6 +162,7 @@
             <!-- chartist chart -->
             <script src="{{ asset('template-resources/plugins/bower_components/chartist-js/dist/chartist.min.js') }}"></script>
             <script src="{{ asset('template-resources/plugins/bower_components/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js') }}"></script>
+            
             <!-- Sparkline chart JavaScript -->
             <script src="{{ asset('template-resources/plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js') }}"></script>
             <!-- Custom Theme JavaScript -->
@@ -166,6 +172,49 @@
             <script src="{{ asset('custom-resources/js/custom-script.js') }}"></script>
             <script src="{{ asset('template-resources/js/dashboard1.js') }}"></script>
             <script src="{{ asset('template-resources/plugins/bower_components/toast-master/js/jquery.toast.js') }}"></script>
+        
+        
+        
+</div>
+<!-- background div end -->      
+        
+<!-- modal -->
+
+
+    <div class="row modal-wrapper" >
+        <div class="col-md-2 modale-left" >
+            <button class="prev_btn">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </button>
+        </div>
+        <div class="col-md-8 modal-middle" >
+            
+            <img src="ab.jpg" class="image-fluid modal-img" id="modal-img" alt="">
+            
+            
+            <a href="#"><div class="modal-cross-btn" >
+                <p>x</p>
+            </div></a>
+            
+            <div class="modal-caption-bar" >
+                <p>Microbiology  by Hashim Jadoon</p>
+                <div>
+                        <button class="btn btn-xs btn-danger">Delete</button>
+                        <button class="btn btn-xs btn-warning">Reject</button>
+                        <button class="btn btn-xs btn-info">Approve</button>
+                        <button class="btn btn-xs btn-success">Finalize</button>
+                        
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-2 modal-right" >
+                <button class="next_btn">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                </button>
+        </div>
+    </div>
+<!-- modal end -->
         </body>
         
         </html>

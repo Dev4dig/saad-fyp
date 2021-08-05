@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class PostsController extends Controller
@@ -19,6 +20,7 @@ class PostsController extends Controller
     }
 
     public function submitted(){
+        
         return view('posts.submitted');
     }
 
@@ -28,5 +30,13 @@ class PostsController extends Controller
 
     public function pending_edit(){
         return view('posts.pending_edit');
+    }
+
+    public function full_post(){
+        return view('posts.full_post');
+    }
+
+    public function edit_post(){
+        return view('posts.edit_post');
     }
 }

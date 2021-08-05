@@ -4,15 +4,19 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class article_post extends Component
+class mpu extends Component
 {
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+    public $i;
+    public $imgs;
+    public function __construct($data)
     {
+       $this->i= $data;
+       $this->imgs = array("c.jpg", "ab.jpg", "d.jpg", "wa.jpg");
         //
     }
 
@@ -23,6 +27,6 @@ class article_post extends Component
      */
     public function render()
     {
-        return view('components.article_post');
+        return view('components.mpu');
     }
 }
