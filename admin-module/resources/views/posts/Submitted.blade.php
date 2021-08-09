@@ -1,12 +1,11 @@
-@if(Auth::guard('moderator')->check())
+{{-- @if(Auth::guard('moderator')->check())
   <h1>{{Auth::guard('moderator')->user()->name}}</h1>
 
 @else
   <h1>Not logged in</h1>
-@endif
+@endif --}}
 
-
-{{-- @extends('layout.base')
+@extends('layout.base')
 
 @section('title')
 Submitted posts    
@@ -38,4 +37,4 @@ Submitted posts
     <!-- End media tab containt div -->
 
 
-@endsection --}}
+@endsection

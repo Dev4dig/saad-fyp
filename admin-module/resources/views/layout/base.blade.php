@@ -76,12 +76,23 @@
                              <h3 style="color:white; margin-left:20px; ">Sadbarg</h3>
                         </div>
                         <!-- /Logo -->
+                        
                         <ul class="nav navbar-top-links navbar-right pull-right" style="background: black">
+                            <li style="margin-top:18px;">
+                                    <form action="{{route('logout')}}" method="post">
+                                            @csrf
+                                          <button class='btn-link' type="submit" style="color:white;"> Logout</button>
+                                                  
+                                      </form>
+                            </li>
+                            
                             <li>
                                 <a href="{{route('manage-admin')}}">Management Panel</a>
                             </li>
                             <li>
-                            <a class="profile-pic" href="{{route('profile')}}"> <b class="hidden-xs">Steave &nbsp;&nbsp;</b><img src="{{ asset('template-resources/plugins/images/users/varun.jpg') }}" alt="user-img" width="36" class="img-circle"></a>
+                            
+                                
+                            <a class="profile-pic" href="{{route('profile')}}"> <b class="hidden-xs">{{Auth::guard('moderator')->user()->name}} &nbsp;&nbsp;</b><img src="{{ asset('template-resources/plugins/images/users/varun.jpg') }}" alt="user-img" width="36" class="img-circle"></a>
                             </li>
                         </ul>
                     </div>

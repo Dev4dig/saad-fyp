@@ -24,27 +24,30 @@ Route::get('/', function () {
 
 Route::get('/profile', function () {
     return view('user.profile');
-})->name('profile');
+})->name('profile')->middleware('custom_auth');
 
 Route::get('/login', [userController::class,'index_login'])->name('login');
 Route::post('/login', [userController::class,'login']);
 
-Route::get('/approved', [PostsController::class,'approved'])->name('approved');
+Route::post('/logout', [userController::class,'logout'])->name('logout');
+Route::get('/approved', [PostsController::class,'approved'])->name('approved')->middleware('custom_auth');
 
 Route::get('/register', [userController::class,'register'])->name('approved');
 
-Route::get('/rejected', [PostsController::class,'rejected'])->name('rejected');
+Route::get('/rejected', [PostsController::class,'rejected'])->name('rejected')->middleware('custom_auth');
 
-Route::get('/finalized', [PostsController::class,'finalized'])->name('finalized');
+Route::get('/finalized', [PostsController::class,'finalized'])->name('finalized')->middleware('custom_auth');
 
-Route::get('/submitted', [PostsController::class,'submitted'])->name('submitted');
+Route::get('/submitted', [PostsController::class,'submitted'])
+->name('submitted')
+->middleware('custom_auth');
 
-Route::get('/edited', [PostsController::class,'edited'])->name('edited');
+Route::get('/edited', [PostsController::class,'edited'])->name('edited')->middleware('custom_auth');
 
-Route::get('/full-post',[PostsController::class,'full_post'])->name('full-post');
+Route::get('/full-post',[PostsController::class,'full_post'])->name('full-post')->middleware('custom_auth');
 
-Route::get('/edit-post',[PostsController::class,'edit_post'])->name('edit-post');
+Route::get('/edit-post',[PostsController::class,'edit_post'])->name('edit-post')->middleware('custom_auth');
 
-Route::get('/pending-edit',[PostsController::class,'pending_edit'])->name('pending_edit');
+Route::get('/pending-edit',[PostsController::class,'pending_edit'])->name('pending_edit')->middleware('custom_auth');
 
-Route::get('/manage-admin',[managementController::class,'index'])->name('manage-admin');
+Route::get('/manage-admin',[managementController::class,'index'])->name('manage-admin')->middleware('custom_auth');
