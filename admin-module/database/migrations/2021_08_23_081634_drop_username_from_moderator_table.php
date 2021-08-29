@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePendingStudentsTable extends Migration
+class DropUsernameFromModeratorTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreatePendingStudentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('pending_students', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('pending_student_id')->constrained()->onDelete('cascade');
-            $table->integer('roll_no');
-            $table->timestamps();
+        Schema::table('moderator', function (Blueprint $table) {
+            $table->dropColumn('username');
+        
         });
     }
 
@@ -28,6 +26,8 @@ class CreatePendingStudentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pending_students');
+        Schema::table('moderator', function (Blueprint $table) {
+            //
+        });
     }
 }

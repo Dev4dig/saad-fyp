@@ -45,11 +45,14 @@ top: 0;
 
 .post-body{
     
-    word-wrap: break-word;
-    height: 73%;
+    /* word-wrap: break-word; */
+    height: 210px;
+    max-height: 210px;
+    overflow-y: scroll;
     padding: 20px;
-    font-size: 13pt;
+    font-size: 11pt;
     font-family: sans-serif;
+    padding-bottom: 5px;
 
 }
 
@@ -63,7 +66,7 @@ top: 0;
 }
 
 .post-heading{
-    font-size: 17pt;
+    font-size: 14pt;
     
     margin-top: 10px;
     font-style: bold;
@@ -182,7 +185,7 @@ top: 0;
   background: white;
   margin-top: -20px;
   float: right;
-  margin-left: 75%;
+  margin-left: 5%;
   border-radius: 5px;
   box-shadow: 2px 2px 7px 1px #aaaaaa;
   border: 1px solid #dddddd;
@@ -191,12 +194,15 @@ top: 0;
 }
 
 
-.user-opt-menu ul li{
+.user-opt-menu ul button{
   text-decoration: none;
-  font-size: 11pt;
+  font-size: 10pt;
   list-style: none;
   margin-left: -30px;
   margin-top: 5px;
+  border:none;
+  background-color: transparent;
+  color: blue;
  }
 
   .hr-divider{
@@ -248,12 +254,14 @@ top: 0;
   /* border: 1px solid green; */
   height: 100%;
   padding: 5px;
+  margin-left: 5px
+  ;
 
 }
 
 .profile-pic-div{
-  height: 90px;
-  width: 90px;
+  height: 70px;
+  width: 70px;
   border-radius: 50%;
   border: 3px solid grey;
   margin: auto;
@@ -283,6 +291,7 @@ top: 0;
 
 .profile-card-left-wrapper{
   height: 100%;
+  margin-left:-5px;
   /* border: 1px solid red; */
 }
 

@@ -39,7 +39,7 @@
                 {{-- profile details wrapper --}}
                 <div class="col-md-7 col-sm-8 user-card-profile-details-wrapper">
                     <div class="profile-name">
-                        <p style=" display: inline-block;">Muhammad Ali </p><h5 style="margin-left:5px; display: inline-block; color: #bbbbbb;"> - Admin</h5>
+                        <p style=" display: inline-block;">{{ $i }} </p><h5 style="margin-left:5px; display: inline-block; color: #bbbbbb;"> - Admin</h5>
                         
                     </div>
     

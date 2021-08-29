@@ -86,9 +86,13 @@
                                       </form>
                             </li>
                             
+                            @if (Auth::guard('moderator')->user()->role == 1)
+
                             <li>
-                                <a href="{{route('manage-admin')}}">Management Panel</a>
-                            </li>
+                                    <a href="{{route('manage-admin')}}">Management Panel</a>
+                                </li>
+                            @endif
+                            
                             <li>
                             
                                 
@@ -125,9 +129,7 @@
                             <li>
                                     <a href="{{route('approved')}}" class="waves-effect"><i class="fa  fa-fw" ></i>Approved</a>
                             </li>
-                            <li>
-                                    <a href="{{route('finalized')}}" class="waves-effect"><i class="fa  fa-fw"></i>Finalized</a>
-                            </li>
+                            
                             
                             
         

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCustomUsersTable extends Migration
+class CreateModeratorsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,16 @@ class CreateCustomUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('custom_users', function (Blueprint $table) {
+        Schema::create('moderators', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('username');
-            $table->string('department');
-            $table->string('profile_pic');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
+            $table->string('username')->unique();
             $table->string('password');
+            $table->string('email')->unique();
+            $table->string('name');
             $table->rememberToken();
+            $table->string('profile_pic');
+            $table->integer('role');
+            $table->string('about');
             $table->timestamps();
         });
     }
@@ -34,6 +34,6 @@ class CreateCustomUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('custom_users');
+        Schema::dropIfExists('moderators');
     }
 }

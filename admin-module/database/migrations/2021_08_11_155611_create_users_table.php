@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateModeratorsTable extends Migration
+class CreateUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,21 @@ class CreateModeratorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('moderators', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('username');
+            
+            $table->string('email')->unique();
+            $table->string('username')->unique();
             $table->string('password');
-            $table->string('email');
             $table->string('name');
-            $table->rememberToken();
             $table->string('profile_pic');
             $table->integer('role');
             $table->string('about');
+            $table->rememberToken();
+            $table->timestamp('email_verified_at')->nullable();
             $table->timestamps();
+
+
         });
     }
 
@@ -34,6 +38,6 @@ class CreateModeratorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('moderators');
+        Schema::dropIfExists('users');
     }
 }

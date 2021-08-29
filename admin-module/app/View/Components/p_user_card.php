@@ -4,19 +4,23 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class user_card extends Component
+class p_user_card extends Component
 {
     /**
      * Create a new component instance.
      *
-     * @return void
+     *
      */
-
-    public $i;
-    public function __construct($data)
+    public $name;
+    public $iden;
+    
+    public function __construct($name, $iden)
     {
+        //$this->data = json_decode($data);
+        $this->name = $name;
+        $this->iden = $iden;
+
        
-        $this->i = $data;
     }
 
     /**
